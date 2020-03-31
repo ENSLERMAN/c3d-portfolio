@@ -4,7 +4,7 @@ import './Jumbotron.scss';
 export default function Jumbotron() {
     return (
         <div className="main">
-            <div className="navbar-links">
+            <div className="navbar-links mr-5 mt-5 d-flex justify-content-end">
                 <a href="#">Наши проекты</a>
                 <a href="#">О команде</a>
                 <a href="#">Контакты</a>
