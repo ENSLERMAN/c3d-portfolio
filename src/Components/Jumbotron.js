@@ -1,14 +1,28 @@
-import React from 'react'
+import React from 'react'; 
+import Navbar from 'react-bootstrap/Navbar';
+import Nav from 'react-bootstrap/Nav';
 import './Jumbotron.scss';
 
 export default function Jumbotron() {
     return (
         <div className="main">
-            <div className="navbar-links mr-5 mt-5 d-flex justify-content-end">
-                <a href="#">Наши проекты</a>
-                <a href="#">О команде</a>
-                <a href="#">Контакты</a>
-            </div>
+            <Navbar collapseOnSelect expand="md" variant="dark">
+            <Navbar.Brand href=""></Navbar.Brand>
+            <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+            <Navbar.Collapse id="responsive-navbar-nav" className="justify-content-end mr-md-4 mt-md-4">
+                <Nav className="navbar-links text-right">
+                    <Nav.Item>
+                        <Nav.Link href="#">Наши проекты</Nav.Link>
+                    </Nav.Item>
+                    <Nav.Item>
+                        <Nav.Link href="#">О команде</Nav.Link>
+                    </Nav.Item>
+                    <Nav.Item>
+                        <Nav.Link href="#">Контакты</Nav.Link>
+                    </Nav.Item>
+                </Nav>
+            </Navbar.Collapse>
+            </Navbar>
             <div className="text">
                 <h1>Центр разработки<br />Московского Политеха</h1>
             </div>
