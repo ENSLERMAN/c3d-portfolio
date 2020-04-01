@@ -6,3 +6,13 @@ body {
   color: white;
   background-image: url('/Assets/background.jpg');
 }
+
+.w-85 {
+  width: 85%;
+}
+
+@media only screen and (orientation: portrait) {
+  .pt-sm-3 {
+    padding-top: 2rem;
+  }
+}
