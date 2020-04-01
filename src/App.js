@@ -1,7 +1,7 @@
 import React from 'react';
 
-import Projects from "./Components/Projects"
-import Jumbotron from "./Components/Jumbotron";
+import Projects from "./Components/Projects/Projects"
+import Jumbotron from "./Components/Jumbotron/Jumbotron";
 
 function App() {
   return (
