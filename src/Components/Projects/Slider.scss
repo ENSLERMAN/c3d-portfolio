@@ -3,7 +3,6 @@
     width: 100%;
     border: 1.5px solid grey;
     border-radius: 20px;
-    
 
     h3 {
         text-align: center;
@@ -44,6 +43,11 @@
         width: 183px;
         height: 40px;
         margin-bottom: 1rem;
+        display: block;
+
+        &:hover {
+            background: linear-gradient(90deg, rgb(255, 158, 66) 0%, rgb(255, 212, 105) 100%);
+        }
     }
 }
 

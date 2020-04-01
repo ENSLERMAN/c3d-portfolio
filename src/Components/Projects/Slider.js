@@ -59,7 +59,7 @@ const Slider = () => {
                             <h3 className="mb-3">{el.title}</h3>
                             <img src={el.img} alt=""/>
                             <h5 className="">{el.desc}</h5>
-                            <button>Перейти к проекту</button>
+                            <button className="mx-auto">Перейти к проекту</button>
                         </div>
                     );
                 })
