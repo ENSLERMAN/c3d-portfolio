@@ -1,8 +1,6 @@
 import React from 'react';
 import Swiper from 'react-id-swiper';
-import Modal from 'react-bootstrap/Modal'
-import Button from 'react-bootstrap/Button'
-// import MyModal from './Modal'
+import MyModal from './Modal/Modal'
 import 'swiper/swiper.scss'
 import './Slider.scss'
 
@@ -33,11 +31,11 @@ const data = [
     }
 ]
 
-const [modalShow, setModalShow] = React.useState(false);
-const handleClose = () => setModalShow(false);
-const handleShow = () => setModalShow(true);
-
 const Slider = () => {
+
+    const [modalShow, setModalShow] = React.useState(false);
+    const [id, setId] = React.useState(-1);
+
     const params = {
         slidesPerView: 'auto',
         breakpoints: {
@@ -60,12 +58,13 @@ const Slider = () => {
             prevEl: '.material-icons.navigation.btn-back'
         }
     }
+
     return (
         <div className="container-fluid">
             <div className="w-85 mx-auto">
                 <Swiper {...params}>
                     {
-                        data.map( el => {
+                        data.map( (el) => {
                             return (
                                 <div className="brd" key={el.id}>
                                     <div>
@@ -74,7 +73,10 @@ const Slider = () => {
                                         <h5 className="text-break">{el.desc}</h5>
                                     </div>
                                     <button className="mx-auto"
-                                            onClick={handleShow}
+                                            onClick={ () => {
+                                                setId(el.id);
+                                                setModalShow(true)
+                                            }}
                                     >Перейти к проекту</button>
                                 </div>
                             );
@@ -82,41 +84,14 @@ const Slider = () => {
                     }
                 </Swiper>
             </div>
-
             <MyModal
                 show={modalShow}
+                item = {id - 1}
+                arr = {data}
                 onHide={() => setModalShow(false)}
             />
         </div>
     )
 };
-
-function MyModal(props) {
-    return (
-      <Modal
-        {...props}
-        size="lg"
-        aria-labelledby="contained-modal-title-vcenter"
-        centered
-      >
-        <Modal.Header closeButton>
-          <Modal.Title id="contained-modal-title-vcenter">
-            Modal heading
-          </Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <h4>Centered Modal</h4>
-          <p>
-            Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-            dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-            consectetur ac, vestibulum at eros.
-          </p>
-        </Modal.Body>
-        <Modal.Footer>
-          <Button onClick={handleClose}>Close</Button>
-        </Modal.Footer>
-      </Modal>
-    );
-  }
 
 export default Slider;
