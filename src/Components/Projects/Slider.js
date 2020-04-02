@@ -1,5 +1,8 @@
 import React from 'react';
 import Swiper from 'react-id-swiper';
+import Modal from 'react-bootstrap/Modal'
+import Button from 'react-bootstrap/Button'
+// import MyModal from './Modal'
 import 'swiper/swiper.scss'
 import './Slider.scss'
 
@@ -30,6 +33,10 @@ const data = [
     }
 ]
 
+const [modalShow, setModalShow] = React.useState(false);
+const handleClose = () => setModalShow(false);
+const handleShow = () => setModalShow(true);
+
 const Slider = () => {
     const params = {
         slidesPerView: 'auto',
@@ -50,13 +57,11 @@ const Slider = () => {
         loopFillGroupWithBlank: true,
         navigation: {
             nextEl: '.material-icons.navigation.btn-next',
-            prevEl: '.material-icons.navigation .btn-next'
+            prevEl: '.material-icons.navigation.btn-back'
         }
     }
     return (
         <div className="container-fluid">
-            {/* <div className="material-icons navigation btn-next" tabindex="0" role="button">arrow_forward_ios</div>
-            <div className="material-icons navigation btn-back" tabindex="0" role="button">arrow_back_ios</div> */}
             <div className="w-85 mx-auto">
                 <Swiper {...params}>
                     {
@@ -68,15 +73,50 @@ const Slider = () => {
                                         <img src={el.img} alt=""/>
                                         <h5 className="text-break">{el.desc}</h5>
                                     </div>
-                                    <button className="mx-auto">Перейти к проекту</button>
+                                    <button className="mx-auto"
+                                            onClick={handleShow}
+                                    >Перейти к проекту</button>
                                 </div>
                             );
                         })
                     }
                 </Swiper>
             </div>
+
+            <MyModal
+                show={modalShow}
+                onHide={() => setModalShow(false)}
+            />
         </div>
     )
 };
+
+function MyModal(props) {
+    return (
+      <Modal
+        {...props}
+        size="lg"
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
+      >
+        <Modal.Header closeButton>
+          <Modal.Title id="contained-modal-title-vcenter">
+            Modal heading
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <h4>Centered Modal</h4>
+          <p>
+            Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
+            dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
+            consectetur ac, vestibulum at eros.
+          </p>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button onClick={handleClose}>Close</Button>
+        </Modal.Footer>
+      </Modal>
+    );
+  }
 
 export default Slider;

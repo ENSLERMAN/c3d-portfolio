@@ -46,7 +46,7 @@
 
 @media only screen and (orientation: portrait) {
     .contacts {
-        padding-top: 10rem;
+        // padding-top: 10rem;
 
         h1 {
             font-size: 7vw;
@@ -77,7 +77,15 @@
         .text-right h4 {
             display: none
         }
+    }   
+}
+
+@media only screen and (max-width: 400px) {
+    .contacts {
+        padding-top: 10rem;
     }
 
-    
+    .container-fluid {
+        margin-top: 0 !important;
+    }
 }
