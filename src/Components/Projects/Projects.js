@@ -4,7 +4,7 @@ import './Projects.scss';
 
 export default function Projects() {
     return (
-        <div className="projects">
+        <div className="projects" id="projects">
             <h1>Наши проекты</h1>
             <div className="slider">
                 <Slider />

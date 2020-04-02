@@ -27,13 +27,14 @@
 }
 
 .navbar-links {
-    .nav-link {
+    a {
         text-decoration: none;
         color: #03E26A !important;
         font-style: normal;
         font-weight: bold;
         font-size: 16px;
         line-height: 20px;
+        margin-left: 3rem;
     }
 
     a:hover {

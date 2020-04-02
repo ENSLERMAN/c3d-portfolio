@@ -7,58 +7,68 @@ const data = [
     {
         id: 1, 
         img: '/Assets/team/lena.jpg', 
-        title: 'Это Лена. Она клёвая',
+        title: `Иудина Елена`,
+        desc: `дизайнер`
     },
     {
         id: 2, 
         img: '/Assets/team/seva.jpg', 
-        title: 'Сева любит Timberland',
+        title: `Кочнев Всеволод`,
+        desc: `разработчик`
     },
     {
         id: 3, 
         img: '/Assets/team/nastya.jpg', 
-        title: 'Настя любит 3D-моделирование и все, что с ним связано',
+        title: 'Бокова Анастасия',
+        desc: `дизайнер`
     },
     {
         id: 4, 
         img: '/Assets/team/masha.jpg', 
-        title: 'Это Маша, подружка Лены',
+        title: 'Кижаева Мария',
+        desc: `аналитик`
     },
     {
         id: 5, 
         img: '/Assets/team/god.jpg', 
-        title: 'Это Артём, он просто гений',
+        title: 'Камалетдинов Артем',
+        desc: `разработчик`
     },
     {
         id: 6, 
         img: '/Assets/team/ira.jpg', 
-        title: 'Это Мирина Утёсова',
+        title: 'Морковина Ирина',
+        desc: `аналитик`
     },
     {
         id: 7, 
         img: '/Assets/team/noname.jpg', 
-        title: 'Я правда не знаю кто это',
+        title: 'Новохатский Максим',
+        desc: `дизайнер`
     },
     {
         id: 8, 
-        img: '/Assets/team/andrey.png', 
-        title: 'Линус Торвальдс второй',
+        img: '/Assets/team/andrey.jpg', 
+        title: 'Архипов Андрей',
+        desc: `разработчик`
     },
     {
         id: 9, 
         img: '/Assets/team/lubovnik.jpg', 
-        title: 'Это Гоша',
+        title: 'Чудаков Георгий',
+        desc: `разработчик`
     },
     {
         id: 10, 
         img: '/Assets/team/artem.jpg', 
-        title: 'Это Артем aka хук в крипа',
+        title: 'Зметный Артем',
+        desc: `разработчик`
     },
     {
         id: 11, 
         img: '/Assets/team/mama_ya_programmist.png', 
-        title: 'Лёша.',
-        desc: 'Тут какой-то текст. Краткое описание там, все такое.'
+        title: `Беседин Алексей`,
+        desc: `разработчик`
     }
 ]
 
@@ -94,8 +104,9 @@ const Slider = () => {
                         data.map( el => {
                             return (
                                 <div className="board" key={el.id}>
-                                    <img src={el.img} alt=""/>
+                                    <img src={el.img} alt="img"/>
                                     <h3>{el.title}</h3>
+                                    <h4>{el.desc}</h4>
                                 </div>
                             );
                         })

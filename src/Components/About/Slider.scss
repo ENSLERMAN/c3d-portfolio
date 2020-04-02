@@ -17,17 +17,46 @@
         width: 250px;
         height: 250px;
         object-fit: cover;
+        transition: transform .6s;
+
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+
+    h4 {
+        text-align: center;
+        font-weight: 300;
+        font-size: 18px;
+        color: rgb(172, 172, 172);
+        margin-top: 0.5rem;
     }
 }
 
 .container-fluid {
     position: relative;
+}
 
-    .material-icons.navigation {
-        font-size: 3vw;
-        cursor: pointer;
-        outline: none;
-        user-select: none; 
+.swiper-button-next {
+    background-image: url(/Assets/arrow.png);
+    background-size: cover;
+    top: 38%;
+}
+
+.swiper-button-prev {
+    background-image: url(/Assets/arrow.png);
+    background-size: cover;
+    top: 38%;
+    transform: scale(-1, 1);
+}
+
+@media only screen and (max-width: 400px) {
+    .swiper-button-next {
+        display: none;
+    }
+    
+    .swiper-button-prev {
+        display: none;
     }
 }
 
