@@ -33,11 +33,12 @@ const data = [
     }
 ]
 
-const [modalShow, setModalShow] = React.useState(false);
-const handleClose = () => setModalShow(false);
-const handleShow = () => setModalShow(true);
+
 
 const Slider = () => {
+    const [modalShow, setModalShow] = React.useState(false);
+    // const handleClose = () => setModalShow(false);
+    const handleShow = () => setModalShow(true);
     const params = {
         slidesPerView: 'auto',
         breakpoints: {
@@ -92,6 +93,9 @@ const Slider = () => {
 };
 
 function MyModal(props) {
+    const [setModalShow] = React.useState(false);
+const handleClose = () => setModalShow(false);
+// const handleShow = () => setModalShow(true);
     return (
       <Modal
         {...props}
