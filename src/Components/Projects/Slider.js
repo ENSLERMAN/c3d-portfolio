@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Swiper from 'react-id-swiper';
 import MyModal from './Modal/Modal'
 import 'swiper/swiper.scss'
@@ -53,16 +53,26 @@ const Slider = () => {
         slidesPerGroup: 1,
         loop: true,
         loopFillGroupWithBlank: true,
-        navigation: {
-            nextEl: '.material-icons.navigation.btn-next',
-            prevEl: '.material-icons.navigation.btn-back'
-        }
     }
+
+    const [swiper, updateSwiper] = useState(null);
+    const goNext = () => {
+      if (swiper !== null) {
+        swiper.slideNext();
+      }
+    };
+    const goPrev = () => {
+      if (swiper !== null) {
+        swiper.slidePrev();
+      }
+    };
 
     return (
         <div className="container-fluid">
+            <div onClick={goPrev} className="swiper-back"></div>
+            <div onClick={goNext} className="swiper-next"></div>
             <div className="w-85 mx-auto">
-                <Swiper {...params}>
+                <Swiper {...params} getSwiper={updateSwiper}>
                     {
                         data.map( (el) => {
                             return (

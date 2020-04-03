@@ -79,3 +79,50 @@
         width: 100%;
     }
 }
+
+.swiper-next {
+    background-image: url(/Assets/arrow.png);
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    z-index: 100;
+}
+
+.swiper-back {
+    background-image: url(/Assets/arrow.png);
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+    transform: scale(-1, 1);
+    cursor: pointer;
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    z-index: 100;
+}
+
+@media only screen and (max-width: 414px) {
+    .swiper-next {
+        margin-top: 1rem;
+        top: 100%;
+    }
+    
+    .swiper-back {
+        margin-top: 1rem;
+        top: 100%;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    .swiper-next {
+        display: none;
+    }
+    
+    .swiper-back {
+        display: none;
+    }
+}
