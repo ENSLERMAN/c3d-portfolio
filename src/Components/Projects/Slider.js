@@ -51,13 +51,13 @@ const Slider = () => {
         },
         spaceBetween: 30,
         slidesPerGroup: 1,
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-        },
+        // pagination: {
+        //     el: '.swiper-pagination',
+        //     clickable: true,
+        // },
         loop: true,
         autoplay: {
-            delay: 2500,
+            delay: 3000,
             disableOnInteraction: true,
         },
         loopFillGroupWithBlank: true,
@@ -74,6 +74,12 @@ const Slider = () => {
         swiper.slidePrev();
       }
     };
+    // const pagRender = () => {
+    //     if (swiper !== null) {
+    //         swiper.pagination.update();
+    //         swiper.pagination.render();
+    //     }
+    // }
 
     return (
         <div className="container-fluid">
