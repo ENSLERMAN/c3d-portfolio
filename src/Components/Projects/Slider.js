@@ -49,9 +49,17 @@ const Slider = () => {
                 slidesPerView: 1,
             }
         },
-        spaceBetween: 50,
+        spaceBetween: 30,
         slidesPerGroup: 1,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
         loop: true,
+        autoplay: {
+            delay: 2500,
+            disableOnInteraction: true,
+        },
         loopFillGroupWithBlank: true,
     }
 

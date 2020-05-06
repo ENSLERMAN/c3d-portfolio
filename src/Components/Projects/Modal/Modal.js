@@ -25,7 +25,7 @@ export default function MyModal(props) {
                     <h2>{item.title}</h2>
                         <div class="row">
                             <div class="col-sm-8">
-                                <img src={item.img} alt="jopa"></img>
+                                <img src={item.img} alt="image"></img>
                             </div>
                             <div class="col-sm-4 text-break">
                                 <h4>{item.desc}</h4>
