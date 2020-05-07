@@ -72,6 +72,10 @@ const data = [
     }
 ]
 
+data.sort(() => {
+    return Math.random() - 0.5
+})
+
 const Slider = () => {
     const params = {
         slidesPerView: 'auto',
